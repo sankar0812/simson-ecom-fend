@@ -9,7 +9,7 @@ import { LoginBackground, LoginPointingBoy } from "@assets/images";
 import { baseRequest } from "@request/request";
 import { APIURLS } from "@request/apiUrls/urls";
 import { toast } from "react-toastify";
-import LoginImg from '@assets/images/Shirts/LoginImg.jpg'
+import LoginImg from '@assets/images/Shirts/loginImg.jpg'
 
 export const Wrapperj = styled.div`
   height: 100vh;

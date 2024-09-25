@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const baseURLs = {
-  development: 'http://192.168.29.66:8083/', // API server url (Development)
-  production: 'https://dev.api.simsongarments.com/', // API server url (Production)
-  staging: 'https://dev.admin.simsongarments.com/',  // API server url (Staging)
+  //development: 'http://192.168.29.66:8083/', // API server url (Development)
+  production: 'http://3.7.156.47:8083/', // API server url (Production)
+  //staging: 'https://dev.admin.simsongarments.com/',  // API server url (Staging)
 
 
   // --------- Production----------------
@@ -12,8 +12,8 @@ const baseURLs = {
 };
 
 
-const environment = process.env.NODE_ENV || 'development'
-// const environment = 'production'
+//const environment = process.env.NODE_ENV || 'development'
+const environment = 'production'
 console.log(environment, 'environment');
 
 

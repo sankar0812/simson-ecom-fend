@@ -1,0 +1,27 @@
+trigger:
+- main
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'  # Use Build.BuildId as the tag for the Docker image
+  imageName: 'sankar0812/simson-ecom-admin-frontend'  # Your Docker image name
+
+stages:  # Add the stages section
+- stage: BuildAndPushStage  # Name the stage
+  displayName: Build and Push Docker Image
+  jobs:
+  - job: BuildAndPush
+    displayName: Build and Push Docker Image
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      displayName: Build and Push Image
+      inputs:
+        containerRegistry: 'DockerHubConnection'  # Ensure this matches your Docker registry service connection
+        repository: '$(imageName)'  # Your Docker image repository
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'  # Dockerfile location (use relative path if needed)
+        tags: '$(tag)'  # Image tag based on Build ID
